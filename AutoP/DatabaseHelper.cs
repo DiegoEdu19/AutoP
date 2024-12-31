@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace proyecto
+namespace AutoP
 {
     public class DatabaseHelper
     {

@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System;
 
-namespace proyecto
+namespace AutoP
 {
     public partial class MainWindow : Window
     {
@@ -24,18 +24,16 @@ namespace proyecto
             {
                 string rol = ObtenerRolUsuario(usuario);
 
-                if (rol == "Jefe")
+                if (rol == "Empleado")
                 {
-                    // Abrir ventana del jefe
-                    VentanaJefe ventanajefe = new VentanaJefe();
-                    ventanajefe.Show();
-                    this.Close(); // Cierra la ventana actual
-                }
-                else if (rol == "Empleado")
-                {
-                    // Abrir ventana de empleados
+                    // Crear y mostrar la ventana de bienvenida
+                    VentanaEmpleado ventanaBienvenida = new VentanaEmpleado();
+                    ventanaBienvenida.Show();
+
+                    // Luego, abre la ventana principal de empleado
                     VentanaEmpleado ventanaempleado = new VentanaEmpleado();
                     ventanaempleado.Show();
+
                     this.Close(); // Cierra la ventana actual
                 }
                 else
